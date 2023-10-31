@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\block_model;
 use App\Models\city_model;
 use App\Models\country_model;
 use App\Models\info_model;
+use App\Models\phase_model;
 use App\Models\socity_model;
 use App\Models\state_model;
+use App\Models\sub_block_model;
+use App\Models\sub_phase_model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class data_controller extends Controller
 {
@@ -627,214 +633,223 @@ class data_controller extends Controller
             Zaman Park
             Zubaida Park";
         }
-       function islamabad_data(){
-        $data = "
-        7th Avenue
-        9th Avenue
-        AGHOSH
-        Abdullah Garden
-        Airport Avenue Housing Society
-        Airport Enclave
-        Aiza Garden
-        Al Huda Town
-        Al Qaim Town
-        Ali Pur
-        Alipur Farash
-        Angoori Road
-        Arsalan Town
-        Athal
-        Atomic Energy Employee Society
-        B-17
-        Bahria Town
-        Bani Gala
-        Bhara kahu
-        Blue Area
-        Bokra Road
-        Burma Town
-        C-18
-        C-19
-        CBR Town
-        Capital Enclave
-        Chak Shahzad
-        Chatha Bakhtawar
-        Chattar
-        Constitution Avenue
-        D-12
-        D-13
-        D-14
-        D-16
-        D-17
-        D-18
-        DHA Defence
-        Diplomatic Enclave
-        E-11
-        E-13
-        E-14
-        E-15
-        E-16
-        E-17
-        E-18
-        E-7
-        Eden Life Islamabad
-        Emaar Canyon Views
-        F-10
-        F-11
-        F-15
-        F-17
-        F-6
-        F-7
-        F-8
-        FECHS(205)
-        Faisal Town - F-18
-        Fateh Jang Road
-        Federal Government Employees Housing Foundation
-        Frash Town
-        G-10
-        G-11
-        G-12
-        G-13
-        G-14
-        G-15
-        G-16
-        G-17
-        G-6
-        G-7
-        G-8
-        G-9
-        GT Road
-        Gandhara City
-        Garden Town
-        Ghauri Town
-        Golra Mor
-        Golra Road
-        Green Avenue
-        Green Hills Housing Scheme
-        Gulberg
-        Gulf Residencia
-        Gulshan-e-Khudadad
-        H-11
-        H-12
-        H-13
-        H-15
-        H-9
-        I-10
-        I-11
-        I-12
-        I-13
-        I-14
-        I-16
-        I-8
-        I-9
-        IJP Road
-        Ibn-e-Sina Road
-        Iqbal Town
-        Islamabad - Murree Expressway
-        Islamabad - Peshawar Motorway
-        Islamabad Expressway
-        Islamabad Garden
-        Islamabad Golf City
-        Islamabad Highway
-        Ittefaq Town
-        J and K Zone 5
-        Jagiot Road
-        Jandala Road
-        Jeddah Town
-        Jhang Syedan
-        Jhangi Syedan
-        Jinnah Avenue
-        Judicial Town
-        Kahuta Road
-        Karakoram Diplomatic Enclave
-        Kashmir Highway
-        Kashmir Town
-        Khanna Pul
-        Khayaban-e-Iqbal
-        Koral Chowk
-        Koral Town
-        Korang Road
-        Korang Town
-        Kuri Road
-        Lawyers Society
-        Lehtarar Road
-        Madina Town
-        Main Margalla Road
-        Malot
-        Margalla Town
-        Margalla Valley - C-12
-        Marwa Town
-        Meherban Colony
-        Model Town
-        Mohra Nur Road
-        Motorway Chowk
-        Multi Residencia & Orchards
-        Mumtaz City
-        Murree Road
-        National Police Foundation
-        National Police Foundation O-9
-        Naval Anchorage
-        Naval Farms Housing Scheme
-        Naval Housing Scheme
-        New Airport Town
-        New Blue Area
-        New Icon City
-        New Shakrial
-        Nova City
-        OPF Valley
-        Orchard Scheme
-        Others
-        PAEC Employees Cooperative Housing Society
-        PAF Tarnol
-        PECHS
-        PTV Colony
-        PWD Housing Scheme
-        PWD Road
-        Pakistan Town
-        Park Enclave
-        Park Road
-        Park View City
-        Phulgran
-        Pind Begwal
-        Pindorian
-        Pir Sohawa
-        Police Foundation Housing Society
-        Qutbal Town
-        Rawal Enclave
-        Rawat
-        River Garden
-        Royal Avenue
-        Sanam Garden Housing Scheme
-        Sangjani
-        Sarai Kharbuza
-        Sehala Farm House
-        Shah Allah Ditta
-        Shaheen Town
-        Shahpur
-        Shalimar Town
-        Shehzad Town
-        Sihala
-        Sihala Valley
-        Simly Dam Road
-        Soan Garden
-        Sohan Valley
-        Spring Valley
-        Swan Garden
-        Taramrri
-        Tarlai
-        Tarnol
-        Thanda Pani
-        The Organic Farms Islamabad
-        The Springs
-        Top City 1
-        Tumair
-        University Town
-        Victoria Heights
-        Wapda Town
-        Zaraj Housing Scheme
-        Zone 5";
-       }
+        function islamabad_data()
+        {
+            $data = "
+            7th Avenue
+            9th Avenue
+            AGHOSH
+            Abdullah Garden
+            Airport Avenue Housing Society
+            Airport Enclave
+            Aiza Garden
+            Al Huda Town
+            Al Qaim Town
+            Ali Pur
+            Alipur Farash
+            Angoori Road
+            Arsalan Town
+            Athal
+            Atomic Energy Employee Society
+            B-17
+            Bahria Town
+            Bani Gala
+            Bhara kahu
+            Blue Area
+            Bokra Road
+            Burma Town
+            C-18
+            C-19
+            CBR Town
+            Capital Enclave
+            Chak Shahzad
+            Chatha Bakhtawar
+            Chattar
+            Constitution Avenue
+            D-12
+            D-13
+            D-14
+            D-16
+            D-17
+            D-18
+            DHA Defence
+            Diplomatic Enclave
+            E-11
+            E-13
+            E-14
+            E-15
+            E-16
+            E-17
+            E-18
+            E-7
+            Eden Life Islamabad
+            Emaar Canyon Views
+            F-10
+            F-11
+            F-15
+            F-17
+            F-6
+            F-7
+            F-8
+            FECHS(205)
+            Faisal Town - F-18
+            Fateh Jang Road
+            Federal Government Employees Housing Foundation
+            Frash Town
+            G-10
+            G-11
+            G-12
+            G-13
+            G-14
+            G-15
+            G-16
+            G-17
+            G-6
+            G-7
+            G-8
+            G-9
+            GT Road
+            Gandhara City
+            Garden Town
+            Ghauri Town
+            Golra Mor
+            Golra Road
+            Green Avenue
+            Green Hills Housing Scheme
+            Gulberg
+            Gulf Residencia
+            Gulshan-e-Khudadad
+            H-11
+            H-12
+            H-13
+            H-15
+            H-9
+            I-10
+            I-11
+            I-12
+            I-13
+            I-14
+            I-16
+            I-8
+            I-9
+            IJP Road
+            Ibn-e-Sina Road
+            Iqbal Town
+            Islamabad - Murree Expressway
+            Islamabad - Peshawar Motorway
+            Islamabad Expressway
+            Islamabad Garden
+            Islamabad Golf City
+            Islamabad Highway
+            Ittefaq Town
+            J and K Zone 5
+            Jagiot Road
+            Jandala Road
+            Jeddah Town
+            Jhang Syedan
+            Jhangi Syedan
+            Jinnah Avenue
+            Judicial Town
+            Kahuta Road
+            Karakoram Diplomatic Enclave
+            Kashmir Highway
+            Kashmir Town
+            Khanna Pul
+            Khayaban-e-Iqbal
+            Koral Chowk
+            Koral Town
+            Korang Road
+            Korang Town
+            Kuri Road
+            Lawyers Society
+            Lehtarar Road
+            Madina Town
+            Main Margalla Road
+            Malot
+            Margalla Town
+            Margalla Valley - C-12
+            Marwa Town
+            Meherban Colony
+            Model Town
+            Mohra Nur Road
+            Motorway Chowk
+            Multi Residencia & Orchards
+            Mumtaz City
+            Murree Road
+            National Police Foundation
+            National Police Foundation O-9
+            Naval Anchorage
+            Naval Farms Housing Scheme
+            Naval Housing Scheme
+            New Airport Town
+            New Blue Area
+            New Icon City
+            New Shakrial
+            Nova City
+            OPF Valley
+            Orchard Scheme
+            Others
+            PAEC Employees Cooperative Housing Society
+            PAF Tarnol
+            PECHS
+            PTV Colony
+            PWD Housing Scheme
+            PWD Road
+            Pakistan Town
+            Park Enclave
+            Park Road
+            Park View City
+            Phulgran
+            Pind Begwal
+            Pindorian
+            Pir Sohawa
+            Police Foundation Housing Society
+            Qutbal Town
+            Rawal Enclave
+            Rawat
+            River Garden
+            Royal Avenue
+            Sanam Garden Housing Scheme
+            Sangjani
+            Sarai Kharbuza
+            Sehala Farm House
+            Shah Allah Ditta
+            Shaheen Town
+            Shahpur
+            Shalimar Town
+            Shehzad Town
+            Sihala
+            Sihala Valley
+            Simly Dam Road
+            Soan Garden
+            Sohan Valley
+            Spring Valley
+            Swan Garden
+            Taramrri
+            Tarlai
+            Tarnol
+            Thanda Pani
+            The Organic Farms Islamabad
+            The Springs
+            Top City 1
+            Tumair
+            University Town
+            Victoria Heights
+            Wapda Town
+            Zaraj Housing Scheme
+            Zone 5";
+        }
 
         //         $show=explode("\n","$data");
         // dd($show);
+
+        try {
+            DB::connection()->getPdo();
+            if (DB::connection()->getDatabaseName()) {
+            }
+        } catch (\Exception $e) {
+            echo "Database is not connected. Error: " . $e->getMessage();
+        }
         return view('welcome');
     }
 
@@ -898,10 +913,16 @@ class data_controller extends Controller
         $data->state = $request->form_state;
         $data->city = $request->form_city;
         $data->socity = $request->form_socity;
+        $data->phase = $request->form_phase;
+        $data->block = $request->form_block;
+        $data->sub_block = $request->form_sub_block;
         $data->country_name = $request->country_name;
         $data->state_name = $request->state_name;
         $data->city_name = $request->city_name;
         $data->socity_name = $request->socity_name;
+        $data->phase_name = $request->phase_name;
+        $data->block_name = $request->block_name;
+        $data->sub_block_name = $request->sub_block_name;
         if ($data->save()) {
             return response()->json(['msg' => "Data Added"]);
         }
@@ -937,12 +958,97 @@ class data_controller extends Controller
         $data->state = $request->form_state;
         $data->city = $request->form_city;
         $data->socity = $request->form_socity;
+        $data->phase = $request->form_phase;
+        $data->block = $request->form_block;
+        $data->sub_block = $request->form_sub_block;
         $data->country_name = $request->country_name;
         $data->state_name = $request->state_name;
         $data->city_name = $request->city_name;
         $data->socity_name = $request->socity_name;
+        $data->phase_name = $request->phase_name;
+        $data->block_name = $request->block_name;
+        $data->sub_block_name = $request->sub_block_name;
         if ($data->update()) {
             return response()->json(['msg' => "Data Updated"]);
         }
     }
+
+    function add_phase_fun(Request $request)
+    {
+        $data = new phase_model;
+        $show = explode("\n", "$request->phase");
+        $newshow = [];
+        foreach ($show as $key => $value) {
+            $newshow[] = str_replace("\r", '', $value);
+        }
+        foreach ($newshow as $key => $newvalue) {
+            $data = new phase_model;
+            $data->country_id = $request->country;
+            $data->state_id = $request->state;
+            $data->city_id = $request->city;
+            $data->socity_id = $request->socity;
+            $data->phase_name = ucfirst($newvalue);
+            $data->save();
+        }
+        return response()->json(["msg" => 'New Phase Added']);;
+    }
+
+    function phase_data_fun($id)
+    {
+        $data = phase_model::where('socity_id', $id)->get();
+        return response()->json($data);
+    }
+
+    function add_block_fun(Request $request)
+    {
+        $show = explode("\n", "$request->block");
+        $newshow = [];
+        foreach ($show as $key => $value) {
+            $newshow[] = str_replace("\r", '', $value);
+        }
+        foreach ($newshow as $key => $newvalue) {
+            $data = new block_model;
+            $data->country_id = $request->country;
+            $data->state_id = $request->state;
+            $data->city_id = $request->city;
+            $data->socity_id = $request->socity;
+            $data->phase_id = $request->phase;
+            $data->block_name = ucfirst($newvalue);
+            $data->save();
+        }
+        return response()->json(["msg" => 'New Block Added']);
+    }
+
+    function block_data_fun ($id){
+        $data = block_model::where('phase_id', $id)->get();
+        return response()->json($data);
+    }
+
+    function add_sub_block_fun (Request $request){
+        $show = explode("\n", "$request->sub_block");
+        $newshow = [];
+        foreach ($show as $key => $value) {
+            $newshow[] = str_replace("\r", '', $value);
+        }
+        foreach ($newshow as $key => $newvalue) {
+            $data = new sub_block_model;
+            $data->country_id = $request->country;
+            $data->state_id = $request->state;
+            $data->city_id = $request->city;
+            $data->socity_id = $request->socity;
+            $data->phase_id = $request->phase;
+            $data->block_id = $request->block;
+            $data->sub_block_name = ucfirst($newvalue);
+            $data->save();
+        }
+        return response()->json(["msg" => 'New Block Added']);
+
+    }
+
+    function sub_block_data_fun ($id){
+        $data = sub_block_model::where('block_id',$id)->get();
+        return response()->json($data);
+
+    }
+
 }

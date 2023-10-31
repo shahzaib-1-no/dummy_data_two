@@ -17,9 +17,15 @@ class info_model extends Model
         'state',
         'city' , 
         'socity' , 
+        'phase' , 
+        'block' , 
+        'sub_block' , 
         'country_name' , 
         'state_name' , 
         'city_name' , 
         'socity_name' , 
+        'phase_name' , 
+        'block_name' , 
+        'sub_block_name' , 
     ];
 }

@@ -16,14 +16,20 @@ return new class extends Migration
             $table->string("fullname")->nullable();
             $table->string("email")->nullable();
             $table->string("password")->nullable();
-            $table->string("country")->nullable();
-            $table->string("state")->nullable();
-            $table->string("city")->nullable();
-            $table->string("socity")->nullable();
+            $table->integer("country")->nullable();
+            $table->integer("state")->nullable();
+            $table->integer("city")->nullable();
+            $table->integer("socity")->nullable();
+            $table->integer("phase")->nullable();
+            $table->integer("block")->nullable();
+            $table->integer("sub_block")->nullable();
             $table->string("country_name")->nullable();
             $table->string("state_name")->nullable();
             $table->string("city_name")->nullable();
             $table->string("socity_name")->nullable();
+            $table->string("phase_name")->nullable();
+            $table->string("block_name")->nullable();
+            $table->string("sub_block_name")->nullable();
             $table->timestamps();
         });
     }

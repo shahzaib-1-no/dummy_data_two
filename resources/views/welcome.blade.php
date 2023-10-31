@@ -48,6 +48,39 @@
                     </div>
                 </div>
             </div>
+            <div class="col-3 mr-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Phase</h5>
+                        <button type="button" class="btn add_city" data-bs-toggle="modal"
+                            data-bs-target="#phase_model">
+                            Add Phase
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 mr-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Block</h5>
+                        <button type="button" class="btn add_city" data-bs-toggle="modal"
+                            data-bs-target="#block_model">
+                            Add Block
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 mr-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Sub Block</h5>
+                        <button type="button" class="btn add_city" data-bs-toggle="modal"
+                            data-bs-target="#sub_block_model">
+                            Add Sub Block
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -90,7 +123,8 @@
     <!--City Modal End -->
 
     <!--Socity Modal Start -->
-    <div class="modal fade " id="socity_model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade " id="socity_model" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -130,10 +164,181 @@
     </div>
     <!--Socity Modal End -->
 
+    <!--Phase Modal Start -->
+    <div class="modal fade " id="phase_model" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Phase<br>
+                        <div class="col msg"></div>
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="add_phase">
+                        <div class="form-group">
+                            <label for="">Select Country</label>
+                            <select class="custom-select" name="country" id="phase_country">
+                                <option selected>Country</option>
+                            </select>
+                        </div>
+                        <div class="form-group hide_phase_state">
+                            <label for="">Select State</label>
+                            <select class="custom-select" name="state" id="phase_state">
+                                <option selected>State</option>
+                            </select>
+                        </div>
+                        <div class="form-group hide_phase_city">
+                            <label for="">Select City</label>
+                            <select class="custom-select" name="city" id="phase_city">
+                                <option selected>City</option>
+                            </select>
+                        </div>
+                        <div class="form-group hide_phase_socity">
+                            <label for="">Select Socity</label>
+                            <select class="custom-select" name="socity" id="phase_socity">
+                            </select>
+                        </div>
+                        <div class="form-group hide_phase">
+                            <label for="">Add All phase</label>
+                            <textarea class="form-control" name="phase" id="phase" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="add_phase_data">Add</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary phase_form_reset"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Phase Modal End -->
+
+    <!--Block Modal Start -->
+    <div class="modal fade " id="block_model" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Block<br>
+                        <div class="col msg"></div>
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="add_block">
+                        <div class="form-group">
+                            <label for="">Select Country</label>
+                            <select class="custom-select" name="country" id="block_country">
+                                <option selected>Country</option>
+                            </select>
+                        </div>
+                        <div class="form-group hide_block_state">
+                            <label for="">Select State</label>
+                            <select class="custom-select" name="state" id="block_state">
+                                <option selected>State</option>
+                            </select>
+                        </div>
+                        <div class="form-group hide_block_city">
+                            <label for="">Select City</label>
+                            <select class="custom-select" name="city" id="block_city">
+                                <option selected>City</option>
+                            </select>
+                        </div>
+                        <div class="form-group hide_block_socity">
+                            <label for="">Select Socity</label>
+                            <select class="custom-select" name="socity" id="block_socity">
+                            </select>
+                        </div>
+                        <div class="form-group hide_block_phase">
+                            <label for="">Select Phase</label>
+                            <select class="custom-select" name="phase" id="block_phase">
+                            </select>
+                        </div>
+                        <div class="form-group hide_block">
+                            <label for="">Add All Block</label>
+                            <textarea class="form-control" name="block" id="block" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="add_block_data">Add</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary block_form_reset"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Block Modal End -->
+
+    <!--Sub Block Modal Start -->
+    <div class="modal fade " id="sub_block_model" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Sub Block<br>
+                        <div class="col msg"></div>
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="add_sub_block">
+                        <div class="form-group">
+                            <label for="">Select Country</label>
+                            <select class="custom-select" name="country" id="sub_block_country">
+                                <option value="">Country</option>
+                            </select>
+                        </div>
+                        <div class="form-group hide_sub_block_state">
+                            <label for="">Select State</label>
+                            <select class="custom-select" name="state" id="sub_block_state">
+                                <option>State</option>
+                            </select>
+                        </div>
+                        <div class="form-group hide_sub_block_city">
+                            <label for="">Select City</label>
+                            <select class="custom-select" name="city" id="sub_block_city">
+                                <option>City</option>
+                            </select>
+                        </div>
+                        <div class="form-group hide_sub_block_socity">
+                            <label for="">Select Socity</label>
+                            <select class="custom-select" name="socity" id="sub_block_socity">
+                            </select>
+                        </div>
+                        <div class="form-group hide_sub_block_phase">
+                            <label for="">Select Phase</label>
+                            <select class="custom-select" name="phase" id="sub_block_phase">
+                            </select>
+                        </div>
+                        <div class="form-group hide_sub_block_block">
+                            <label for="">Select Block</label>
+                            <select class="custom-select" name="block" id="sub_block_block">
+                            </select>
+                        </div>
+                        <div class="form-group hide_sub_block">
+                            <label for="">Add All Sub Block</label>
+                            <textarea class="form-control" name="sub_block" id="sub_block" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="add_sub_block_data">Add</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary sub_block_form_reset"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Sub Block Modal End -->
+
     {{-- Form Start --}}
     <div class="container mt-3 ">
-        <div class="row  offset-4">
-            <div class="col-8">
+        <div class="row  offset-3">
+            <div class="col-10">
                 <form id="form_data">
                     <div class="form-group">
                         <input type="text" class="form-control" name="fullname" id="fullname"
@@ -148,31 +353,59 @@
                             placeholder="Enter Passwrod">
                     </div>
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col">
                             <div class="form-group">
+                                <label for="">Country</label>
                                 <select class="custom-select" name="form_country" id="form_country">
                                 </select>
 
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col">
                             <div class="form-group">
+                                <label for="">State</label>
                                 <select class="custom-select" name="form_state" id="form_state">
-                                    <option selected>State</option>
+                                    <option value="">State</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col">
                             <div class="form-group">
+                                <label for="">City</label>
                                 <select class="custom-select" name="form_city" id="form_city">
-                                    <option selected>City</option>
+                                    <option value="">City</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col">
                             <div class="form-group">
+                                <label for="">Socity</label>
                                 <select class="custom-select" name="form_socity" id="form_socity">
-                                    <option selected>Socity</option>
+                                    <option value="">Socity</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">Phase</label>
+                                <select class="custom-select" name="form_phase" id="form_phase">
+                                    <option value="">Phase</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">Block</label>
+                                <select class="custom-select" name="form_block" id="form_block">
+                                    <option value="">Block</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">Sub Block</label>
+                                <select class="custom-select" name="form_sub_block" id="form_sub_block">
+                                    <option value="">sub_Block</option>
                                 </select>
                             </div>
                         </div>
@@ -203,6 +436,9 @@
                             <th>State</th>
                             <th>City</th>
                             <th>Socity</th>
+                            <th>Phase</th>
+                            <th>Block</th>
+                            <th>Sub Block</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -265,7 +501,7 @@
                     success: function(response) {
                         $('.hide_state').show();
                         $('#state').empty();
-                        $('#state').append('<option selected>State</option>');
+                        $('#state').append('<option value="">State</option>');
                         response.forEach(state => {
                             $('#state').append('<option value=' + state.id + '>' + state
                                 .state_name +
@@ -283,7 +519,7 @@
                 $.ajax({
                     type: "POST",
                     url: "add_city_data",
-                    data: $('#add_city_form').serialize(),
+                    data: $('').serialize(),
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -401,6 +637,441 @@
     </script>
     {{-- Add_Socity Code End --}}
 
+    {{-- Add_Phase Code Start --}}
+    <script>
+        $(document).ready(function() {
+            $('.hide_phase_state').hide();
+            $('.hide_phase_city').hide();
+            $('.hide_phase_socity').hide();
+            $('.hide_phase').hide();
+            phase_country();
+
+            function phase_country() {
+                $.ajax({
+                    type: "GET",
+                    url: "country_data",
+                    success: function(response) {
+                        response.forEach(country => {
+                            $('#phase_country').append('<option value=' + country.id + '>' +
+                                country.country_name + '</option>');
+                        });
+                    }
+                });
+            }
+
+            $('#phase_country').change(function(e) {
+                e.preventDefault();
+                var id = $('#phase_country').val();
+                $.ajax({
+                    type: "GET",
+                    url: "state_data/" + id,
+                    success: function(response) {
+                        $('#phase_city').empty();
+                        $('#phase_city').append('<option selected>City</option>');
+                        $('.hide_phase_city').hide();
+
+                        $('#phase_socity').empty();
+                        $('#phase_socity').append('<option selected>Socity</option>');
+                        $('.hide_phase_socity').hide();
+
+                        $('.hide_phase_state').show();
+                        $('#phase_state').empty();
+                        $('#phase_state').append('<option selected>State</option>');
+                        response.forEach(state => {
+                            $('#phase_state').append('<option value=' + state.id + '>' +
+                                state.state_name + '</option>');
+                        });
+                    }
+                });
+            });
+
+            $('#phase_state').change(function(e) {
+                e.preventDefault();
+                $('.hide_phase_city').show();
+                var id = $('#phase_state').val();
+                $.ajax({
+                    type: "GET",
+                    url: "city_data/" + id,
+                    success: function(response) {
+                        $('#phase_socity').empty();
+                        $('#phase_socity').append('<option selected>Socity</option>');
+                        $('.hide_phase_socity').hide();
+
+                        $('#phase_city').empty();
+                        $('#phase_city').append('<option selected>City</option>');
+                        response.forEach(city => {
+                            $('#phase_city').append('<option value=' + city.id + '>' +
+                                city.city_name + '</option>');
+                        });
+                    }
+                });
+            });
+
+            $('#phase_city').change(function(e) {
+                e.preventDefault();
+                var id = $('#phase_city').val();
+                $.ajax({
+                    type: "GET",
+                    url: "socity_form/" + id,
+                    success: function(response) {
+                        $('.hide_phase_socity').show();
+                        $('#phase_socity').empty();
+                        $('#phase_socity').append('<option selected>Socity</option>');
+
+                        response.forEach(socity => {
+                            $('#phase_socity').append('<option value=' + socity.id +
+                                '>' + socity.socity_name + '</option>');
+                        });
+                    }
+                });
+            });
+
+            $('#phase_socity').change(function(e) {
+                e.preventDefault();
+                var id = $('#phase_socity').val();
+                $('.hide_phase').show();
+            });
+
+            $('#add_phase_data').click(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "add_phase",
+                    data: $('#add_phase').serialize(),
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+                        $('#add_phase')[0].reset();
+                        $('.hide_phase_state').hide();
+                        $('.hide_phase_city').hide();
+                        $('.hide_phase_socity').hide();
+                        $('.hide_phase').hide();
+                        $('.msg').text(response.msg);
+
+                    }
+                });
+            });
+
+            $('.phase_form_reset').click(function(e) {
+                e.preventDefault();
+                $('#add_phase')[0].reset();
+                $('.hide_phase_state').hide();
+                $('.hide_phase_city').hide();
+                $('.hide_phase_socity').hide();
+                $('.hide_phase').hide();
+            });
+        });
+    </script>
+    {{-- Add_Phase Code End --}}
+
+    {{-- Add_block Code Start --}}
+    <script>
+        $(document).ready(function() {
+            $('.hide_block_state').hide();
+            $('.hide_block_city').hide();
+            $('.hide_block_socity').hide();
+            $('.hide_block_phase').hide();
+            $('.hide_block').hide();
+
+            block_country();
+
+            function block_country() {
+                $.ajax({
+                    type: "GET",
+                    url: "country_data",
+                    success: function(response) {
+                        response.forEach(country => {
+                            $('#block_country').append('<option value=' + country.id + '>' +
+                                country.country_name + '</option>');
+                        });
+                    }
+                });
+            }
+
+            $('#block_country').change(function(e) {
+                e.preventDefault();
+                var id = $('#block_country').val();
+                $.ajax({
+                    type: "GET",
+                    url: "state_data/" + id,
+                    success: function(response) {
+                        $('.hide_block_city').hide();
+                        $('.hide_block_socity').hide();
+                        $('.hide_block_phase').hide();
+                        $('.hide_block').hide();
+
+                        $('.hide_block_state').show();
+                        $('#block_state').empty();
+                        $('#block_state').append('<option selected>State</option>');
+                        response.forEach(state => {
+                            $('#block_state').append('<option value=' + state.id +
+                                '>' + state.state_name + '</option>');
+                        });
+                    }
+                });
+            });
+
+            $('#block_state').change(function(e) {
+                e.preventDefault();
+                var id = $('#block_state').val();
+                $.ajax({
+                    type: "GET",
+                    url: "city_data/" + id,
+                    success: function(response) {
+                        $('.hide_block_socity').hide();
+                        $('.hide_block_phase').hide();
+                        $('.hide_block').hide();
+
+                        $('.hide_block_city').show();
+                        $('#block_city').empty();
+                        $('#block_city').append('<option selected>City</option>');
+                        response.forEach(city => {
+                            $('#block_city').append('<option value=' + city.id +
+                                '>' + city.city_name + '</option>');
+
+                        });
+                    }
+                });
+            });
+
+            $('#block_city').change(function(e) {
+                e.preventDefault();
+                var id = $('#block_city').val();
+                $.ajax({
+                    type: "GET",
+                    url: "socity_form/" + id,
+                    success: function(response) {
+                        $('.hide_block_phase').hide();
+                        $('.hide_block').hide();
+
+                        $('.hide_block_socity').show();
+                        $('#block_socity').empty();
+                        $('#block_socity').append('<option selected>Socity</option>');
+                        response.forEach(socity => {
+                            $('#block_socity').append('<option value=' + socity.id +
+                                '>' + socity.socity_name + '</option>');
+                        });
+                    }
+                });
+
+            });
+
+            $('#block_socity').change(function(e) {
+                e.preventDefault();
+                var id = $('#block_socity').val();
+                $.ajax({
+                    type: "GET",
+                    url: "phase_data/" + id,
+                    success: function(response) {
+                        $('.hide_block_phase').show();
+                        $('#block_phase').empty();
+                        $('#block_phase').append('<option selected>Phase</option>');
+                        response.forEach(phase => {
+                            $('#block_phase').append('<option value=' + phase.id +
+                                '>' + phase.phase_name + '</option>');
+                        });
+                    }
+                });
+            });
+
+            $('#block_phase').change(function(e) {
+                e.preventDefault();
+                $('.hide_block').show();
+            });
+
+            $('#add_block_data').click(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "add_block",
+                    data: $('#add_block').serialize(),
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+                        $('.hide_block_state').hide();
+                        $('.hide_block_city').hide();
+                        $('.hide_block_socity').hide();
+                        $('.hide_block_phase').hide();
+                        $('.hide_block').hide();
+                        $('#add_block')[0].reset();
+                        $('.msg').text(response.msg);
+
+                    }
+                });
+            });
+
+            $('.block_form_reset').click(function(e) {
+                e.preventDefault();
+                $('.hide_block_state').hide();
+                $('.hide_block_city').hide();
+                $('.hide_block_socity').hide();
+                $('.hide_block_phase').hide();
+                $('.hide_block').hide();
+                $('#add_block')[0].reset();
+            });
+        });
+    </script>
+    {{-- Add_block Code End --}}
+
+    {{-- Add_block Code Start --}}
+    <script>
+        $(document).ready(function() {
+            sub_block_country();
+            $('.hide_sub_block_state').hide();
+            $('.hide_sub_block_city').hide();
+            $('.hide_sub_block_socity').hide();
+            $('.hide_sub_block_phase').hide();
+            $('.hide_sub_block_block').hide();
+            $('.hide_sub_block').hide();
+
+            function sub_block_country() {
+                $.ajax({
+                    type: "GET",
+                    url: "country_data",
+                    success: function(response) {
+                        response.forEach(country => {
+                            $('#sub_block_country').append('<option value=' + country.id + '>' +
+                                country.country_name + '</option>');
+                        });
+                    }
+                });
+            }
+
+            $('#sub_block_country').change(function(e) {
+                e.preventDefault();
+                var id = $('#sub_block_country').val();
+                $.ajax({
+                    type: "GET",
+                    url: "state_data/" + id,
+                    success: function(response) {
+                        $('.hide_sub_block_state').show();
+                        $('#sub_block_state').empty();
+                        $('#sub_block_state').append('<option>State</option>');
+                        response.forEach(state => {
+                            $('#sub_block_state').append('<option value=' + state.id +
+                                '>' + state.state_name + '</option>');
+                        });
+                    }
+                });
+            });
+
+            $('#sub_block_state').change(function(e) {
+                e.preventDefault();
+                var id = $('#sub_block_state').val();
+                $.ajax({
+                    type: "GET",
+                    url: "city_data/" + id,
+                    success: function(response) {
+                        $('.hide_sub_block_city').show();
+                        $('#sub_block_city').empty();
+                        $('#sub_block_city').append('<option>City</option>');
+                        response.forEach(city => {
+                            $('#sub_block_city').append('<option value=' + city.id +
+                                '>' + city.city_name + '</option>');
+                        });
+                    }
+                });
+            });
+
+            $('#sub_block_city').change(function(e) {
+                e.preventDefault();
+                var id = $('#sub_block_city').val();
+                $.ajax({
+                    type: "GET",
+                    url: "socity_form/" + id,
+                    success: function(response) {
+                        $('.hide_sub_block_socity').show();
+                        $('#sub_block_socity').empty();
+                        $('#sub_block_socity').append('<option>Socity</option>');
+                        response.forEach(socity => {
+                            $('#sub_block_socity').append('<option value=' + socity.id +
+                                '>' + socity.socity_name + '</option>');
+                        });
+                    }
+                });
+            });
+
+            $('#sub_block_socity').change(function(e) {
+                e.preventDefault();
+                var id = $('#sub_block_socity').val();
+                $.ajax({
+                    type: "GET",
+                    url: "phase_data/" + id,
+                    success: function(response) {
+                        $('.hide_sub_block_phase').show();
+                        $('#sub_block_phase').empty();
+                        $('#sub_block_phase').append('<option>Phase</option>');
+                        response.forEach(phase => {
+                            $('#sub_block_phase').append('<option value=' + phase.id +
+                                '>' + phase.phase_name + '</option>');
+                        });
+                    }
+                });
+            });
+
+            $('#sub_block_phase').change(function(e) {
+                e.preventDefault();
+                var id = $('#sub_block_phase').val();
+                $.ajax({
+                    type: "GET",
+                    url: "block_data/" + id,
+                    success: function(response) {
+                        $('.hide_sub_block_block').show();
+                        $('#sub_block_block').empty();
+                        $('#sub_block_block').append('<option>Block</option>');
+                        response.forEach(block => {
+                            $('#sub_block_block').append('<option value=' + block.id +
+                                '>' + block.block_name + '</option>');
+                        });
+                    }
+                });
+
+            });
+
+            $('#sub_block_block').change(function(e) {
+                e.preventDefault();
+                $('.hide_sub_block').show();
+            });
+
+            $('#add_sub_block_data').click(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "add_sub_block",
+                    data: $('#add_sub_block').serialize(),
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+                        $('.hide_sub_block_state').hide();
+                        $('.hide_sub_block_city').hide();
+                        $('.hide_sub_block_socity').hide();
+                        $('.hide_sub_block_phase').hide();
+                        $('.hide_sub_block_block').hide();
+                        $('.hide_sub_block').hide();
+                        $('#add_sub_block')[0].reset();
+                        $('.msg').text(response.msg);
+
+                    }
+                });
+            });
+
+            $('.sub_block_form_reset').click(function(e) {
+                e.preventDefault();
+                $('.hide_sub_block_state').hide();
+                $('.hide_sub_block_city').hide();
+                $('.hide_sub_block_socity').hide();
+                $('.hide_sub_block_phase').hide();
+                $('.hide_sub_block_block').hide();
+                $('.hide_sub_block').hide();
+                $('#add_sub_block')[0].reset();
+            });
+        });
+    </script>
+    {{-- Add_block Code End --}}
+
     {{-- Form Code Start --}}
     <script>
         form_country();
@@ -411,20 +1082,26 @@
                     fullname: 'required',
                     email: 'required',
                     password: 'required',
-                    form_country: {
-                        required: function(element) {
-                            return $('#form_country').val() === 'Country';
-                        }
-                    }
+                    form_country: 'required',
+                    form_state: 'required',
+                    form_city: 'required',
+                    form_socity: 'required',
+                    form_phase: 'required',
+                    form_block: 'required',
+                    form_sub_block: 'required',
                 },
                 submitHandler: function() {
                     var country_name = $('#form_country option:selected').text();
                     var state_name = $('#form_state option:selected').text();
                     var city_name = $('#form_city option:selected').text();
                     var socity_name = $('#form_socity option:selected').text();
+                    var phase_name = $('#form_phase option:selected').text();
+                    var block_name = $('#form_block option:selected').text();
+                    var sub_block_name = $('#form_sub_block option:selected').text();
                     var all_data = $('#form_data').serialize() + "&country_name=" + country_name +
                         "&state_name=" + state_name + "&city_name=" + city_name + "&socity_name=" +
-                        socity_name;
+                        socity_name + "&phase_name=" + phase_name + "&block_name=" + block_name +
+                        "&sub_block_name=" + sub_block_name;
                     $.ajax({
                         type: "POST",
                         url: "form_data",
@@ -447,7 +1124,7 @@
                 type: "GET",
                 url: "country_data",
                 success: function(response) {
-                    $('#form_country').append('<option selected>Country</option>');
+                    $('#form_country').append('<option value="">Country</option>');
                     response.forEach(country => {
                         $('#form_country').append('<option value=' + country.id +
                             '>' + country
@@ -465,10 +1142,17 @@
                 type: "GET",
                 url: "state_data/" + id,
                 success: function(response) {
+                    $('#form_phase').empty();
+                    $('#form_phase').append('<option value="">Phase</option>');
+
+                    $('#form_socity').empty();
+                    $('#form_socity').append('<option value="">Socity</option>');
+
                     $('#form_city').empty();
-                    $('#form_city').append('<option selected>City</option>');
+                    $('#form_city').append('<option value="">City</option>');
+
                     $('#form_state').empty();
-                    $('#form_state').append('<option selected>State</option>');
+                    $('#form_state').append('<option value="">State</option>');
                     response.forEach(state => {
                         $('#form_state').append('<option value=' + state.id + '>' + state
                             .state_name + '</option>');
@@ -486,7 +1170,7 @@
                 url: "city_data/" + id,
                 success: function(response) {
                     $('#form_city').empty();
-                    $('#form_city').append('<option selected>City</option>');
+                    $('#form_city').append('<option value="">City</option>');
                     response.forEach(city => {
                         $('#form_city').append('<option value=' + city.id + '>' + city
                             .city_name + '</option>');
@@ -502,11 +1186,67 @@
                 type: "GET",
                 url: "socity_form/" + id,
                 success: function(response) {
+                    $('#form_phase').empty();
+                    $('#form_phase').append('<option value="">Phase</option>');
+
                     $('#form_socity').empty();
-                    $('#form_socity').append('<option selected>Socity</option>');
+                    $('#form_socity').append('<option value="">Socity</option>');
                     response.forEach(socity => {
                         $('#form_socity').append('<option value=' + socity.id + '>' + socity
                             .socity_name + '</option>');
+                    });
+                }
+            });
+        });
+
+        $('#form_socity').change(function(e) {
+            e.preventDefault();
+            var id = $('#form_socity').val();
+            $.ajax({
+                type: "GET",
+                url: "phase_data/" + id,
+                success: function(response) {
+                    $('#form_phase').empty();
+                    $('#form_phase').append('<option value="">Phase</option>');
+                    response.forEach(phase => {
+                        $('#form_phase').append('<option value=' + phase.id + '>' + phase
+                            .phase_name + '</option>');
+                    });
+                }
+            });
+        });
+
+        $('#form_phase').change(function(e) {
+            e.preventDefault();
+            var id = $('#form_phase').val();
+            $.ajax({
+                type: "GET",
+                url: "block_data/" + id,
+                success: function(response) {
+                    $('#form_block').empty();
+                    $('#form_block').append('<option value="">block</option>');
+                    response.forEach(block => {
+                        $('#form_block').append('<option value=' + block.id + '>' + block
+                            .block_name + '</option>');
+                    });
+                }
+            });
+
+        });
+
+        $('#form_block').change(function(e) {
+            e.preventDefault();
+            var id = $('#form_block').val();
+            $.ajax({
+                type: "GET",
+                url: "sub_block_data/" + id,
+                success: function(response) {
+                    $('#form_sub_block').empty();
+                    $('#form_sub_block').append('<option value="">sub_block</option>');
+                    response.forEach(sub_block => {
+                        $('#form_sub_block').append('<option value=' + sub_block.id + '>' +
+                            sub_block
+                            .sub_block_name + '</option>');
                     });
                 }
             });
@@ -521,27 +1261,22 @@
                     $('#show_data_body').empty();
                     response.forEach(data => {
                         count++;
-                        $('#show_data_body').append(
-                            '<tr>\
-                                                                            <td>' + count + '</td>\
-                                                                            <td>' + data.fullname + '</td>\
-                                                                            <td>' + data.email + '</td>\
-                                                                            <td>' + data.password + '</td>\
-                                                                            <td>' + data.country_name + '</td>\
-                                                                            <td>' + data.state_name + '</td>\
-                                                                            <td>' + data.city_name + '</td>\
-                                                                            <td>' + data.socity_name +
-                            '</td>\
-                                                                            <td><button class="btn btn-warning btn-sm update" data-id=' +
-                            data
-                            .id +
-                            '>Update</button></td>\
-                                                                            <td><button class="btn btn-danger btn-sm delete" data-name=' +
-                            data
-                            .fullname +
-                            ' data-id=' + data.id + '>Delete</button></td>\
-                                                                        </tr>'
-                        );
+                        $('#show_data_body').append('<tr>\
+                                <td>' + count + '</td>\
+                                <td>' + data.fullname + '</td>\
+                                <td>' + data.email + '</td>\
+                                <td>' + data.password + '</td>\
+                                <td>' + data.country_name + '</td>\
+                                <td>' + data.state_name + '</td>\
+                                <td>' + data.city_name + '</td>\
+                                <td>' + data.socity_name + '</td>\
+                                <td>' + data.phase_name + '</td>\
+                                <td>' + data.block_name + '</td>\
+                                <td>' + data.sub_block_name + '</td>\
+                                <td><button class= "btn btn-sm btn-warning update" data-id="' + data.id + '">Update</button></td>\
+                                <td><button class= "btn btn-sm btn-danger delete" data-id="' + data.id + '" data-name=' +
+                            data.fullname + '>Delete</button></td>\
+                                </tr>');
                     });
                 }
             });
@@ -587,9 +1322,13 @@
             var state_name = $('#form_state option:selected').text();
             var city_name = $('#form_city option:selected').text();
             var socity_name = $('#form_socity option:selected').text();
+            var phase_name = $('#form_phase option:selected').text();
+            var block_name = $('#form_block option:selected').text();
+            var sub_block_name = $('#form_sub_block option:selected').text();
             var all_data = $('#form_data').serialize() + "&country_name=" + country_name +
                 "&state_name=" + state_name + "&city_name=" + city_name + "&socity_name=" +
-                socity_name;
+                socity_name + "&phase_name=" + phase_name + "&block_name=" + block_name + "&sub_block_name=" +
+                sub_block_name;
             console.log(all_data);
             $.ajax({
                 type: "POST",
@@ -612,8 +1351,6 @@
         });
     </script>
     {{-- Form Code End --}}
-
-
 </body>
 
 </html>

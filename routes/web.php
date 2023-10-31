@@ -26,3 +26,10 @@ Route::get('show_all_data',[data_controller::class,'show_all_data_fun']);
 Route::get('delete/{id}',[data_controller::class,'delete_fun']);
 Route::get('fetch_update_data/{id}',[data_controller::class,'fetch_update_data_fun']);
 Route::post('update_data',[data_controller::class,'update_data_fun']);
+Route::post('add_phase',[data_controller::class,'add_phase_fun']);
+Route::get('phase_data/{id}',[data_controller::class,'phase_data_fun']);
+Route::post('add_block',[data_controller::class,'add_block_fun']);
+Route::get('block_data/{id}',[data_controller::class,'block_data_fun']);
+Route::post('add_sub_block',[data_controller::class,'add_sub_block_fun']);
+Route::get('sub_block_data/{id}',[data_controller::class,'sub_block_data_fun']);
+
