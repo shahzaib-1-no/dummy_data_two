@@ -89,8 +89,9 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">City</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">City
+                        <div class="col msg"></div>
+                    </h1>
                 </div>
                 <div class="modal-body">
                     <form id="add_city_form">
@@ -128,8 +129,9 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title
+                        <div class="col msg"></div>
+                    </h1>
                 </div>
                 <div class="modal-body">
                     <form id="add_socity">
@@ -173,7 +175,6 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Add Phase<br>
                         <div class="col msg"></div>
                     </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="add_phase">
@@ -225,7 +226,6 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Add Block<br>
                         <div class="col msg"></div>
                     </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="add_block">
@@ -282,7 +282,6 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Add Sub Block<br>
                         <div class="col msg"></div>
                     </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="add_sub_block">
@@ -1262,21 +1261,22 @@
                     response.forEach(data => {
                         count++;
                         $('#show_data_body').append('<tr>\
-                                <td>' + count + '</td>\
-                                <td>' + data.fullname + '</td>\
-                                <td>' + data.email + '</td>\
-                                <td>' + data.password + '</td>\
-                                <td>' + data.country_name + '</td>\
-                                <td>' + data.state_name + '</td>\
-                                <td>' + data.city_name + '</td>\
-                                <td>' + data.socity_name + '</td>\
-                                <td>' + data.phase_name + '</td>\
-                                <td>' + data.block_name + '</td>\
-                                <td>' + data.sub_block_name + '</td>\
-                                <td><button class= "btn btn-sm btn-warning update" data-id="' + data.id + '">Update</button></td>\
-                                <td><button class= "btn btn-sm btn-danger delete" data-id="' + data.id + '" data-name=' +
+                                        <td>' + count + '</td>\
+                                        <td>' + data.fullname + '</td>\
+                                        <td>' + data.email + '</td>\
+                                        <td>' + data.password + '</td>\
+                                        <td>' + data.country_name + '</td>\
+                                        <td>' + data.state_name + '</td>\
+                                        <td>' + data.city_name + '</td>\
+                                        <td>' + data.socity_name + '</td>\
+                                        <td>' + data.phase_name + '</td>\
+                                        <td>' + data.block_name + '</td>\
+                                        <td>' + data.sub_block_name + '</td>\
+                                        <td><button class= "btn btn-sm btn-warning update" data-id="' + data.id + '">Update</button></td>\
+                                        <td><button class= "btn btn-sm btn-danger delete" data-id="' + data.id +
+                            '" data-name=' +
                             data.fullname + '>Delete</button></td>\
-                                </tr>');
+                                        </tr>');
                     });
                 }
             });
